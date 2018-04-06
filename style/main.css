@@ -1,0 +1,133 @@
+body {
+	width: 95vw;
+	height: 95vh;
+	margin: auto;
+	margin-top: 5vh;
+  border: 1px solid #c7c7c7;
+}
+header {
+  margin-left: 40px;
+}
+
+.header__container {
+	margin-top: 5vh;
+}
+
+.header__ingredients {
+  margin-bottom: -10px
+	font-size: 1em;
+  color: #a5a0a0;
+}
+
+.buttom__container {
+	margin-top: 20px;
+	display: flex;
+  font-size: 1em;
+  color: #4295f4;
+}
+
+.products {
+	height: 30vh;
+	border-bottom: 1px solid #c7c7c7;
+  border-top: 1px solid #4295f4;
+}
+
+.products__list {
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #c7c7c7;
+}
+
+.products__list:hover {
+	background-color: #eeeeee;
+}
+
+.checkbox__list {
+	-webkit-appearance: none;
+	width: 15px;
+	height: 15px;
+	outline: none;
+	border: 1px solid #a5a0a0;
+	border-radius: 2px;
+	box-shadow: .07em .07em .07em .07em #c7c7c7;
+	padding-left: 2px;
+	margin-left: 10px;
+}
+
+.checkbox__list:checked {
+	background-color: #4295f4;
+	color: #ffffff;
+}
+
+.checkbox__list:checked:after {
+	content: '✓';
+	position: absolute;
+}
+
+.counter__list {
+	width: 50px;
+	height: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: 1px solid #a5a0a0;
+	border-radius: 2px;
+	outline: none;
+	font-size: 1.7em;
+	text-align: center;
+	color: #4295f4;
+}
+
+.list__details {
+	margin-left: 10px;
+	flex-grow: 2
+}
+
+.article__list {
+	font-size: 1.2em;
+}
+
+.brand__list {
+	font-size: .9em;
+	color: #c7c7c7;
+}
+
+.weight__list {
+	font-size: .9em;
+	color: #a5a0a0;
+}
+
+.item__price {
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #498214;
+	margin-right: 30px;
+}
+
+.resume__container {
+  height: 30vh;
+	margin-left: 40px
+}
+
+.item__container {
+display: flex;
+}
+.subtotal__container, .shipping__container, .total__container{
+	display: flex;
+  justify-content: space-between;
+  margin-right: 40px;
+}
+.total__container-price {
+  font-size: 1.5em;
+  color: #498214;
+}
+
+.buttom__buy {
+	width: 95%;
+	height: 50px;font-size: 1.2em;
+	border-radius: 10px;
+	background-color: #498214;
+	color: #ffffff;
+}
