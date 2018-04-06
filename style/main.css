@@ -1,6 +1,6 @@
 body {
 	width: 95vw;
-	height: 95vh;
+	height: 115vh;
 	margin: auto;
 	margin-top: 5vh;
   border: 1px solid #c7c7c7;
@@ -14,7 +14,7 @@ header {
 }
 
 .header__ingredients {
-  margin-bottom: -10px
+  margin-bottom: -10px;
 	font-size: 1em;
   color: #a5a0a0;
 }
@@ -47,7 +47,7 @@ header {
 
 .checkbox__list {
 	-webkit-appearance: none;
-	width: 15px;
+	/* width: 15px; */
 	height: 15px;
 	outline: none;
 	border: 1px solid #a5a0a0;
@@ -112,8 +112,14 @@ header {
 }
 
 .item__container {
-display: flex;
+  display: flex;
 }
+
+.item__container-number {
+  margin-left: 15px;
+  margin-top: 26px;
+}
+
 .subtotal__container, .shipping__container, .total__container{
 	display: flex;
   justify-content: space-between;
