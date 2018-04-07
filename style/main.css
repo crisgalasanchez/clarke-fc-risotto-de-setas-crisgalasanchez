@@ -24,6 +24,7 @@ header {
 	display: flex;
   font-size: 1em;
   color: #4295f4;
+	cursor: pointer;
 }
 
 .products {
