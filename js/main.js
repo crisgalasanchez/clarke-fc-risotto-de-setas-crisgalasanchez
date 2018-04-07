@@ -3,11 +3,15 @@ var productsList = document.querySelector('.products__list');
 var titleRecipe = document.querySelector('.header__title');
 var totalPrice = document.querySelector('.total__price');
 var shippingPrice = document.querySelector('.shipping__price');
+var itemContainer = document.querySelector('.item__container-number');
 var subtotalContainer = document.querySelector('.subtotal__price');
-var subtotalContainerButton = document.querySelector('.buttom__buy');
+var subtotalContainerButton = document.querySelector('.total__price-buttom');
 var counterProducts = 0;
+var itemCounter = 0;
+var subtotalCounter = 0;
 var ingredients = "";
 var currency = "";
+var shippingCosts = "";
 
 function requestIngredients(){
 	var responseJSON;
@@ -23,7 +27,7 @@ function requestIngredients(){
       ingredients = responseJSON.recipe.ingredients;
       currency =responseJSON.recipe.currency;
 			var name =responseJSON.recipe.name;
-			var shippingCosts =responseJSON.recipe["shipping-cost"];
+			shippingCosts =responseJSON.recipe["shipping-cost"];
 
       for(var i=0; i < ingredients.length; i++){
     		list+= '<li class="products__list-items">';
@@ -52,16 +56,20 @@ function checkPriceArticle(){
 	var checkboxList = document.querySelectorAll('.checkbox__list');
 	var counterlist = document.querySelectorAll('.counter__list');
 	var pricelist = document.querySelectorAll('.price__list');
+	itemCounter = 0;
+	subtotalCounter = 0;
 	for(var i=0; i < checkboxList.length; i++){
 		if(checkboxList[i].checked){
 			var counterIngredient = counterlist[i].value;
 			var priceIngredient = getIngredientPrice(checkboxList[i].value);
-			//var priceIngredient = pricelist[i].innerHTML.substring(0, pricelist[i].innerHTML.length-1);
 			var sumPrice = parseFloat(counterIngredient) * parseFloat(priceIngredient);
 			var result = sumPrice.toFixed(2);
 			pricelist[i].innerHTML = result + currency;
+			itemCounter += parseFloat(counterIngredient);
+			subtotalCounter += parseFloat(result);
     }
 	}
+		printTotal()
 }
 
 function getIngredientPrice(product){
@@ -75,11 +83,12 @@ function getIngredientPrice(product){
 	return price;
 }
 
-// function printTotal() {
-//   subtotalContainer.innerHTML = sumPrice + currency;
-// 	totalPrice.innerHTML = subtotalContainer*shippingPrice;
-//
-// }
+function printTotal() {
+  itemContainer.innerHTML = itemCounter;
+	subtotalContainer.innerHTML = subtotalCounter.toFixed(2) + currency;
+	totalPrice.innerHTML = (subtotalCounter + shippingCosts).toFixed(2) + currency;
+	subtotalContainerButton.innerHTML = (subtotalCounter + shippingCosts).toFixed(2) + currency;
+}
 
 function checkAll(){
   var checkbox = document.querySelectorAll('.checkbox__list');
