@@ -35,7 +35,12 @@ function requestIngredients(){
         list+= '<input class="counter__list" type="number" onchange="checkPriceArticle()" value="0" min="0" name="quantity" disabled="true"/>';
         list+= '<div class="list__details">';
         list+= '<h3 class="article__list">'+ingredients[i].product+'</h3>';
-        list+= '<h4 class="brand__list">'+ingredients[i].brand+'</h4>';
+				if( ingredients[i].brand == undefined){
+					list+= '<h4 class="brand__list">'+"Marca blanca"+'</h4>'; 
+				}else{
+					list+= '<h4 class="brand__list">'+ingredients[i].brand+'</h4>';
+				}
+
         list+= '<p class="weight__list">'+ingredients[i].quantity+'</p>';
         list+= '</div>';
         list+= '<div class="">';
@@ -118,8 +123,10 @@ function checkUncheck(){
 			counterlist[i].disabled = false;
     }else{
 			counterlist[i].disabled = true;
+			counterlist[i].value= 0;
 		}
 	}
+	checkPriceArticle();
 }
 
 document.querySelector('.buttom__select').addEventListener('click', checkAll);
