@@ -36,7 +36,7 @@ function requestIngredients(){
         list+= '<div class="list__details">';
         list+= '<h3 class="article__list">'+ingredients[i].product+'</h3>';
 				if( ingredients[i].brand == undefined){
-					list+= '<h4 class="brand__list">'+"Marca blanca"+'</h4>'; 
+					list+= '<h4 class="brand__list">'+"Marca blanca"+'</h4>';
 				}else{
 					list+= '<h4 class="brand__list">'+ingredients[i].brand+'</h4>';
 				}
@@ -97,9 +97,10 @@ function printTotal() {
 
 function checkAll(){
   var checkbox = document.querySelectorAll('.checkbox__list');
+	var counterlist = document.querySelectorAll('.counter__list');
   for(let i=0; i<checkbox.length; i++){
     document.querySelector('#checkbox'+ i ).checked = true;
-
+		counterlist[i].disabled = false;
   }
 // printTotal()
 
@@ -111,6 +112,7 @@ function descheckAll(e){
   for(let i=0; i<checkbox.length; i++){
     document.querySelector('#checkbox'+ i ).checked = false;
 		counterlist[i].value= 0;
+		counterlist[i].disabled = true;
   }
 
 }
